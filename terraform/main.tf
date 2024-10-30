@@ -5,6 +5,9 @@ provider "kubernetes" {
 
 provider "aws" {
   region = var.region
+
+  # run this when we store credentials in local machine and then terraform scripts, otherwise, the default profile will take it and have issue with kms permission
+  #  profile = "gitops"
 }
 
 data "aws_availability_zones" "available" {}
